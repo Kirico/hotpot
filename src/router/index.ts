@@ -12,6 +12,8 @@ const router = createBrowserRouter([
     path: '/about',
     Component: About
   }
-])
+], {
+  basename: '/hotpot/'
+})
 
 export default router
