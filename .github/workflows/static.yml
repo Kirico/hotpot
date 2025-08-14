@@ -8,7 +8,11 @@ on:
 
   # 这个选项可以使你手动在 Action tab 页面触发工作流
   workflow_dispatch:
-
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'World'
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages。
 permissions:
   contents: read
@@ -51,4 +55,4 @@ jobs:
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
