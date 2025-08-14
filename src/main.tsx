@@ -6,7 +6,9 @@ import './index.css'
 import App from './App.tsx'
 
 unstableSetRender((node, container) => {
+  // @ts-ignore
   container._reactRoot ||= createRoot(container);
+  // @ts-ignore
   const root = container._reactRoot;
   root.render(node);
   return async () => {
