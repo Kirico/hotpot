@@ -2,13 +2,16 @@ import { createBrowserRouter } from 'react-router'
 
 import Home from '../pages/Home'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      Component: Home,
+    },
+  ],
   {
-    path: '/',
-    Component: Home
-  }
-], {
-  basename: '/hotpot/'
-})
+    basename: '/hotpot/',
+  },
+)
 
 export default router

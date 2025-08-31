@@ -6,18 +6,16 @@ import './index.css'
 import App from './App.tsx'
 
 unstableSetRender((node, container) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  container._reactRoot ||= createRoot(container);
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  container._reactRoot ||= createRoot(container)
   // @ts-expect-error
-  const root = container._reactRoot;
-  root.render(node);
+  const root = container._reactRoot
+  root.render(node)
   return async () => {
-    await new Promise((resolve) => setTimeout(resolve, 0));
-    root.unmount();
-  };
-});
+    await new Promise((resolve) => setTimeout(resolve, 0))
+    root.unmount()
+  }
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
